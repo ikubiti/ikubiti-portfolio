@@ -1,0 +1,366 @@
+/* color scheme sourced from http://khroma.co/generator/ */
+:root {
+    --pale-light-cyan: rgb(214,233,230);
+    --rich-dark-blue: rgb(10,30,118);
+    --rich-midtone-cyan: rgb(15,204,237);
+    --white: #fff;
+    --gin: #e0eae4;
+    --black: #000;
+    --rich-magenta: rgb(238,116,238);
+}
+
+html {
+  /* Resetting 1rem to 10px instead of native 16px for easier manipulation font-size values */
+  font-size: 62.5%;
+}
+
+body {
+  /* Sans Serif font stack is implemented to help select the best font for each type of computer operating system */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  /* set body font size to 1.75rem  */
+  font-size: 1.75rem;
+  line-height: 1.5;
+  /* Set the main application text color and background color */
+  color: var(--rich-dark-blue);
+  background-color: var(--pale-light-cyan);
+}
+
+/* Reinitialize the heading parameters */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.625rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1 {
+  /* 4rem = 40px (4 * 10px) */
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Using flex-direction of column for mobile-first approach */
+#main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    background-color: var(--rich-dark-blue);
+    text-align: center;
+}
+
+/* Alignment for application header */
+#main-header #intro-wrapper{
+    flex: 1;
+    display: flex;
+    justify-content:flex-start;
+}
+
+#main-header #h1-wrapper {
+    flex: 1, 1, 0;
+    background-color: var(--rich-midtone-cyan);
+    text-align:right;
+    margin-left: -3rem;    
+}
+
+#main-header h1 {
+    flex:auto;
+    line-height: 8rem;
+    font-size: 100%;
+}
+
+/* Setting the preferred dimensions of my profile picture */
+#main-header img {
+    margin-left: 0.5rem;
+    flex: auto;
+    max-width: 10rem;
+    max-height: 10rem;
+}
+
+/* Required to make header alignment function as required */
+#main-header nav {
+    flex: 2;
+    text-align: right;
+
+}
+
+/* Default settings for navigation bar */
+#main-header nav a {
+    color: var(--rich-midtone-cyan);
+    font-size: 160%;
+    margin: auto 0.1em;
+    font-weight: bold;    
+}
+
+/* change navigation bar item to indicate hovering action */
+#main-header nav a:hover {
+    color: var(--white);
+    font-size: 180%;
+}
+
+/* Element is displayed in Italics to indicate further information */
+span[data-pronounce] {
+    position: relative;
+    font-style: italic;
+    font-size: 120%;
+    margin-right: 0.1em;
+    cursor: pointer;
+}
+
+span[data-pronounce]:hover {
+    color: var(--white);
+    font-size: 125%;
+}
+
+/* Position tooltip above the term/phrase, same color as header and nav links, no border-radius, smaller font size */
+span[data-pronounce]:hover::after {
+    content: attr(data-pronounce);
+    position: absolute;
+    bottom: 25px;
+    min-width: 250px;
+    border: 1px var(--pale-light-cyan) solid;
+    background-color: var(--rich-dark-blue);
+    color: var(--rich-midtone-cyan);
+    font-size: 30%;
+    z-index: 1;
+}
+
+/* Default setting for mobile-first design */
+main, footer {
+    display: flex;
+    flex-direction: column;
+}
+
+#main-intro {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  
+  margin: 0;
+   background-image:url("../images/air-strip2.jpg");
+}
+
+#main-intro h2 {
+    margin: 1em 0;
+    padding-right: 0.1em;
+    color: var(--rich-midtone-cyan)
+}
+
+#about-me article {
+    padding: 0 0.3rem;
+}
+
+.main-layout{
+    display: flex;
+    flex-direction: column;
+}
+
+aside {
+    margin: 1em auto;
+    font-size: 150%;
+    font-weight: bold;
+    border-bottom: 1px solid var(--rich-dark-blue);
+}
+
+.pic-container, .main-pic, .sub-pics {
+    display: flex;
+    flex-direction: column;
+}
+
+.pic-container header {
+    margin: 0 auto;
+}
+
+.pic-container img {
+    flex: 0 0 90%;
+    max-width: 90%;
+    margin: 1rem auto;
+    border: 2px solid var(--rich-magenta);
+}
+
+/* Hide the pictures for display when required */
+.sub-pics {
+    display: none;
+}
+
+/* Display the links when the parent is in a hover state */
+.pic-container:hover {
+    cursor: grab;
+
+}
+
+.pic-container:hover .sub-pics {
+    display: inherit;
+}
+
+#contact-me {
+    background-color: var(--rich-dark-blue);
+    color: var(--pale-light-cyan);
+}
+
+#resume article div {
+    display: flex;
+    justify-content: center;    
+}
+
+/* Add a margin to indent the list, give it square bullet points, and assign font family to monospace */
+ul {
+  margin-left: 10%;
+  list-style: square;
+  font-family: monospace;
+}
+
+#contact-me aside {
+    border-bottom: 1px solid var(--pale-light-cyan);
+}
+
+#contact-me ul a{
+    color: var(--pale-light-cyan);
+}
+
+#contact-me section p {
+    text-align: center;
+}
+
+/* Responsive design for tablets sized screens */
+@media screen and (min-width: 768px) {
+    #main-header {
+        /* Must reposition this in media screens portion */
+        flex-direction: row;
+        justify-content:space-between;
+    }
+
+    /* Adjust margins so self-intro blends into the left screen */
+    #main-header #h1-wrapper {
+        margin-left: -1.6rem;    
+    } 
+
+    /* Resize screen sharing between self-intro and navigation */
+    #main-header nav {
+        flex: 1;
+    }
+
+    #main-header #intro-wrapper {
+        flex: 2;
+    }
+
+    #main-header h1 {
+        font-size: 3rem;
+    }
+
+    /* Reorient the About-me text */
+    #about-me article p {
+        padding: 2rem 4rem;
+    }
+
+    .main-layout{
+        flex-direction: row;
+    }
+
+    /* Reset boundaries outline */
+    aside {
+        margin: 1em auto;
+        border-right: 2px solid var(--rich-dark-blue);
+        border-bottom: none;
+        text-align: center;
+    }
+
+    /* Reset boundaries outline */
+    #contact-me aside {
+        border-right: 2px solid var(--pale-light-cyan);
+        border-bottom: none;
+        flex: 1;
+    }
+    
+    .main-layout aside {
+        flex: 1;
+    }
+
+    .work-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .main-layout .work-wrapper, .main-layout article, #contact-me section {
+        flex: 4;
+    }
+
+    .pic-container {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }   
+    
+    #main-project {
+        flex: 0 0 90%;
+        max-width: 90%;
+    }
+
+    .sub-pics {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .pic-container header {
+        font-size: 80%;
+    }    
+    
+    .pic-container:hover .sub-pics {
+        flex: 0 0 30%;
+        max-width: 30%;
+        margin-bottom: 4rem;
+    }
+    
+    .pic-container:hover .sub-pics img {
+        min-width: 400px;
+        margin: 1rem;
+    }
+}
+
+/* Responsive design for media query at larger screens */
+ @media screen and (min-width: 992px) {
+    #main-header h1 {
+        font-size: 4rem;
+    }
+    
+    /* Adjust footer list to display in the flex-main axis */
+    #contact-me ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-evenly;
+        margin-top: 1rem; 
+    }
+
+    #contact-me section p {
+        margin-top: 2rem;
+    }
+}     
+
