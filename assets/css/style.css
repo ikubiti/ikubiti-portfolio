@@ -98,6 +98,11 @@ p {
     font-size: 100%;
 }
 
+img {
+    object-fit: contain;
+}
+
+
 /* Setting the preferred dimensions of my profile picture */
 #main-header img {
     margin-left: 0.5rem;
@@ -202,9 +207,12 @@ aside {
 
 .pic-container img {
     flex: 0 0 90%;
+    min-width: 85%;
+    max-height: 80%;
     max-width: 90%;
     margin: 1rem auto;
     border: 2px solid var(--rich-magenta);
+    object-fit: fill;
 }
 
 /* Hide the pictures for display when required */
