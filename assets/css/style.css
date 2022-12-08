@@ -207,9 +207,12 @@ aside {
 
 .pic-container img {
     flex: 0 0 90%;
-    min-width: 85%;
+    min-width: 355px;
+    max-width: 350px;
+    max-height: 200px;
+    /* min-width: 85%;
     max-height: 80%;
-    max-width: 90%;
+    max-width: 90%; */
     margin: 1rem auto;
     border: 2px solid var(--rich-magenta);
     object-fit: fill;
@@ -325,7 +328,19 @@ ul {
     .pic-container {
         flex: 0 0 50%;
         max-width: 50%;
-    }   
+    }
+    
+    .pic-container img {
+        flex: 1 0 90%;
+        min-width: 85%;
+        max-height: 145px;
+        max-width: 90%;
+    }
+
+    #main-project img {
+        flex: 1 0 90%;
+        max-height: 80%;
+    }
     
     #main-project {
         flex: 0 0 90%;
@@ -354,10 +369,20 @@ ul {
 }
 
 /* Responsive design for media query at larger screens */
- @media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) {
     #main-header h1 {
         font-size: 4rem;
     }
+
+    .pic-container img {
+        min-height: 195px;
+        max-height: 275px;
+    }
+
+    #main-project img {
+        max-height: 80%;
+    }   
+
     
     /* Adjust footer list to display in the flex-main axis */
     #contact-me ul {
